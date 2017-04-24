@@ -18,7 +18,8 @@ export default {
             current: 1,
             total: null,
         },
-        selectedRowKeys: []
+        selectedRowKeys: [],
+        activeTabKey: 1
     },
 
     subscriptions: {
@@ -109,7 +110,17 @@ export default {
             yield put({
                 type: 'handleSelectedRowKeysChanged',
                 payload: {
-                    selectedRowKeys:payload
+                    selectedRowKeys: payload
+                }
+            })
+        },
+        *tabSwitch({
+            payload,
+        }, { put }) {
+            yield put({
+                type: 'handleTabSwitch',
+                payload: {
+                    activeTabKey: payload
                 }
             })
         },
@@ -138,7 +149,10 @@ export default {
             return { ...state, isMotion: !state.isMotion }
         },
         handleSelectedRowKeysChanged(state, action) {
-            return { ...state, ...action.payload}
+            return { ...state, ...action.payload }
+        },
+        handleTabSwitch(state, action) {
+            return { ...state, ...action.payload }
         }
     },
 
