@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import PropTypes from 'prop-types'
 import { Form, Input, InputNumber, Radio, Modal } from 'antd'
 const FormItem = Form.Item
 

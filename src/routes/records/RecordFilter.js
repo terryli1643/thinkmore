@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import PropTypes from 'prop-types'
 import { Form, Button, Row, Col, Switch } from 'antd'
 import { AdvancedSearch } from '../../components/'
 

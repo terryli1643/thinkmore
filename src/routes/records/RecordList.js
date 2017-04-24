@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import PropTypes from 'prop-types'
 import { Button, Table, Modal } from 'antd'
 import styles from './RecordList.less'
 import classnames from 'classnames'
@@ -129,9 +129,11 @@ function RecordList ({ loading, dataSource, pagination, onPageChange, onDeleteIt
     },
     onSelect: (record, selected, selectedRows) => {
       console.log(record, selected, selectedRows);
+      onSelectedRowKeysChanged(selectedRowKeys);
     },
     onSelectAll: (selected, selectedRows, changeRows) => {
       console.log(selected, selectedRows, changeRows);
+      onSelectedRowKeysChanged(selectedRowKeys);
     },
     getCheckboxProps: record => ({
       disabled: record.name === '',    // Column configuration not to be checked

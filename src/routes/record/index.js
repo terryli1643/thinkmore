@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import PropTypes from 'prop-types'
 import { routerRedux } from 'dva/router'
 import { connect } from 'dva'
 import RecordForm from './RecordForm'
