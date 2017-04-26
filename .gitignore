@@ -1,8 +1,4 @@
 dist
 node_modules
-.DS_Store
-/src_/
-.idea/
-*.tern-project
-*.json.gzip
-/logs/
+yarn.lock
+npm-debug.log

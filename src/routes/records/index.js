@@ -7,13 +7,10 @@ import RecordModal from './RecordModal'
 import { Tabs } from 'antd';
 
 const TabPane = Tabs.TabPane;
-const menuOptions1 = [ { key: '1', name: '编辑' }, { key: '2', name: '打印' } ];
-const menuOptions2 = [ { key: '3', name: '重发' }, { key: '4', name: '打印' } ];
-let applyTrackingNumber = false;
 
 
 function Records ({ location, dispatch, records, loading }) {
-    const { list, pagination, currentItem, modalVisible, modalType, isMotion, selectedRowKeys } = records
+    const { list, pagination, currentItem, modalVisible, modalType, isMotion, selectedRowKeys, activeTabKey } = records
     const { field, keyword } = location.query
 
     const recordModalProps = {
@@ -72,7 +69,7 @@ function Records ({ location, dispatch, records, loading }) {
                 payload: selectedRowKeys
             })
         },
-        menuOptions: menuOptions1,
+        activeTabKey,
     }
 
 
@@ -81,7 +78,6 @@ function Records ({ location, dispatch, records, loading }) {
         keyword,
         isMotion,
         selectedRowKeys,
-        applyTrackingNumber,
         onSearch (fieldsValue) {
             fieldsValue.keyword.length || fieldsValue.timeRange ? dispatch(routerRedux.push({
                     pathname: '/records',
@@ -105,18 +101,10 @@ function Records ({ location, dispatch, records, loading }) {
     }
 
     function callback (key) {
-        if (key === 1) {
-            dispatch({
-                type: 'records/changeSelectedRowKeys',
-                payload: selectedRowKeys
-            })
-        }
-        if (key === 2) {
-            dispatch({
-                type: 'records/changeSelectedRowKeys',
-                payload: selectedRowKeys
-            })
-        }
+        dispatch({
+            type: 'records/tabSwitch',
+            payload: key
+        })
     }
 
     const RecordModalGen = () =>

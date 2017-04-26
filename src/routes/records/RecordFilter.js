@@ -23,7 +23,6 @@ const RecordFilter = ({
     },
   }
 
-  console.log("====" + selectedRowKeys)
   const hasSelected = selectedRowKeys.length > 0;
 
   return (
