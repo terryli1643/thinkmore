@@ -21,8 +21,7 @@ function Header ({ user, logout, switchSider, siderFold, isNavbar, menuPopoverVi
   return (
     <div className={styles.header}>
       {isNavbar
-        ? <Popover placement="bottomLeft" onVisibleChange={switchMenuPopover} visible={menuPopoverVisible}
-                   overlayClassName={styles.popovermenu} trigger="click" content={<Menus {...menusProps} />}>
+        ? <Popover placement="bottomLeft" onVisibleChange={switchMenuPopover} visible={menuPopoverVisible} overlayClassName={styles.popovermenu} trigger="click" content={<Menus {...menusProps} />}>
           <div className={styles.button}>
             <Icon type="bars" />
           </div>
@@ -37,9 +36,8 @@ function Header ({ user, logout, switchSider, siderFold, isNavbar, menuPopoverVi
         <Menu mode="horizontal" onClick={handleClickMenu}>
           <SubMenu style={{
             float: 'right',
-            zIndex: '100'
           }} title={< span > <Icon type="user" />
-            {user.username} </span>}
+            {user.username} < /span>}
           >
             <Menu.Item key="logout">
               <a>注销</a>

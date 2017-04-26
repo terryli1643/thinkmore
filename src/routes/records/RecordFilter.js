@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import React, { PropTypes } from 'react'
 import { Form, Button, Row, Col, Switch } from 'antd'
 import { AdvancedSearch } from '../../components/'
 
@@ -23,7 +23,6 @@ const RecordFilter = ({
     },
   }
 
-  console.log("====" + selectedRowKeys)
   const hasSelected = selectedRowKeys.length > 0;
 
   return (

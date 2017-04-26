@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import React, { PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 import styles from './Search.less'
 import { DatePicker, Input, Select, Button, Icon } from 'antd'
