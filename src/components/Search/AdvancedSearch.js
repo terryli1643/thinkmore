@@ -52,11 +52,11 @@ class AdvancedSearch extends React.Component {
                                                                               key={key}>{item.name || item.value}</Select.Option>)}
           </Select>}
           <RangePicker
-            defaultValue={[moment('2015/01/01', dateFormat), moment('2015/01/01', dateFormat)]}
+            defaultValue={[moment(), moment()]}
             format={dateFormat}
           />
           <Input ref="searchInput" size={size} style={{ width: '50%' }} onChange={this.handleInputChange} onPressEnter={this.handleSearch}
-                 defaultValue={keyword}  placeholder="支持以姓名，手机，订单号，快递单号查询"/>
+                 placeholder="支持以姓名，手机，订单号，快递单号查询"/>
           <Button size={size} type="primary" icon="search" onClick={this.handleSearch}>搜索</Button>
           {clearVisible && <Icon type="cross" onClick={this.handleClearInput} />}
         </Input.Group>
