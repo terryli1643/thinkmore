@@ -104,6 +104,10 @@ function Records ({ location, dispatch, records, loading }) {
         dispatch(routerRedux.push({
             pathname: '/records',
         }))
+        dispatch({
+            type: 'records/tabSwitch',
+            payload: key
+        })
     }
 
     const RecordModalGen = () =>
