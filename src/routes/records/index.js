@@ -49,10 +49,7 @@ function Records ({ location, dispatch, records, loading }) {
             }))
         },
         onPrintItem (id) {
-            dispatch({
-                type: 'records/delete',
-                payload: id,
-            })
+            console.log("pringing : " + id);
         },
         onEditItem (item) {
             dispatch({
@@ -97,7 +94,10 @@ function Records ({ location, dispatch, records, loading }) {
                     modalType: 'create',
                 },
             })
-        }
+        },
+        onPrintItem (id) {
+            console.log("pringing" + id);
+        },
     }
 
     function callback (key) {

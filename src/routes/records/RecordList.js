@@ -9,7 +9,7 @@ import { DropOption } from '../../components'
 const confirm = Modal.confirm
 
 
-function RecordList ({ loading, dataSource, pagination, onPageChange, onDeleteItem, onEditItem, isMotion, location, onSelectedRowKeysChanged, activeTabKey }) {
+function RecordList ({ loading, dataSource, pagination, onPageChange, onPrintItem, onEditItem, isMotion, location, onSelectedRowKeysChanged, activeTabKey }) {
 
     let menuOptionsEvent = () => {
         switch (activeTabKey) {
@@ -83,7 +83,7 @@ function RecordList ({ loading, dataSource, pagination, onPageChange, onDeleteIt
             confirm({
                 title: '您确定要打印这条记录吗?',
                 onOk () {
-                    // onDeleteItem(record.id)
+                    onPrintItem(record.id)
                 },
             })
         } else if (e.key === '3') {

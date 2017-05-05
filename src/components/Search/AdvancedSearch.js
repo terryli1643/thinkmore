@@ -11,39 +11,39 @@ class AdvancedSearch extends React.Component {
   state = {
     clearVisible: false,
     selectValue: (this.props.select && this.props.selectProps) ? this.props.selectProps.defaultValue : '',
-  }
+  };
   handleSearch = () => {
     const data = {
       keyword: ReactDOM.findDOMNode(this.refs.searchInput).value,
-    }
+    };
     if (this.props.select) {
       data.field = this.state.selectValue
     }
     if (this.props.onSearch) this.props.onSearch(data)
-  }
+  };
   handleInputChange = e => {
     this.setState({
       ...this.state,
       clearVisible: e.target.value !== '',
     })
-  }
+  };
   handeleSelectChange = value => {
     this.setState({
       ...this.state,
       selectValue: value,
     })
-  }
+  };
   handleClearInput = () => {
-    ReactDOM.findDOMNode(this.refs.searchInput).value = ''
+    ReactDOM.findDOMNode(this.refs.searchInput).value = '';
     this.setState({
       clearVisible: false,
-    })
+    });
     this.handleSearch()
-  }
+  };
 
   render () {
-    const { size, select, selectOptions, selectProps, style, keyword } = this.props
-    const { clearVisible } = this.state
+    const { size, select, selectOptions, selectProps, style, keyword } = this.props;
+    const { clearVisible } = this.state;
     return (
       <div>
         <Input.Group compact size={size} className={styles.search} style={style}>
@@ -74,6 +74,6 @@ AdvancedSearch.propTypes = {
   selectOptions: PropTypes.array,
   style: PropTypes.object,
   keyword: PropTypes.string,
-}
+};
 
 export default AdvancedSearch
