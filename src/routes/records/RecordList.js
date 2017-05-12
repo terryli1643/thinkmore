@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { Button, Table, Modal } from 'antd'
 import styles from './RecordList.less'
 import classnames from 'classnames'
